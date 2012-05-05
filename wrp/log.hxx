@@ -11,14 +11,14 @@ namespace wrp {
 
   class log{
   private:
-    decltype(std::chrono::system_clock::now()) start;
-    std::string object_name;
-    void* object_address;
+    const decltype(std::chrono::system_clock::now()) start;
+    const std::string object_name;
+    const void* object_address;
     static int nesting_counter;
   public:
     typedef std::chrono::duration<double> unit;
     std::stringstream buffer;
-    explicit log(std::string object_name_ = "", void* object_address_ = 0)
+    explicit log(const std::string object_name_ = "", const void* object_address_ = 0)
       : start(std::chrono::system_clock::now())
       , object_name(object_name_)
       , object_address(object_address_)
