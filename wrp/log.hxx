@@ -5,10 +5,10 @@
 
 #include <boost/range/algorithm.hpp>
 
-namespace wrp { 
+namespace WonderRabbitProject { 
 
-#if !defined(WRP_PRODUCT_NAME)
-  #define WRP_PRODUCT_NAME "UNKNOWN PRODUCT"
+#if !defined(LIBWRP_PRODUCT_NAME)
+  #define LIBWRP_PRODUCT_NAME "UNKNOWN PRODUCT"
 #endif
 
   class log{
@@ -30,7 +30,7 @@ namespace wrp {
       indent.resize(2 * nesting_counter);
       boost::fill(indent, ' ');
       std::cout
-        << indent << "[" WRP_PRODUCT_NAME "] "
+        << indent << "[" LIBWRP_PRODUCT_NAME "] "
                   << object_name << " " << object_address << "\n"
         << indent << "start: "
                   << std::chrono::duration_cast<unit>(start.time_since_epoch()).count()
